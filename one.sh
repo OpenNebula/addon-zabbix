@@ -72,8 +72,9 @@ datastore_space() {
 vnet_leases(){
     if [ -z "$3" ]; then
         case "$1" in
-            USED )  list_vnets_leases_used "$1" | scount "$2" ;;
+            USED  ) list_vnets_leases_used "$1" | scount "$2" ;;
             TOTAL ) list_vnets_leases_total "$1" | scount "$2" ;;
+            FREE  ) vnet_leases difference TOTAL USED "$2"
         esac
     else
         OPERATION="$1"
@@ -142,8 +143,9 @@ case "$1" in
     datastore_free_space  ) datastore_space FREE_MB  "$2" ;;
     datastore_used_space  ) datastore_space USED_MB  "$2" ;;
     vnet_used_leases  ) vnet_leases USED  "$2" ;;
+    vnet_free_leases  ) vnet_leases FREE  "$2" ;;
     vnet_total_leases ) vnet_leases TOTAL "$2" ;;
-    vnet_pused_leases ) vnet_leases percent USED TOTAL    "$2" ;;
-    vnet_free_leases  ) vnet_leases difference TOTAL USED "$2" ;;
+    vnet_pused_leases ) vnet_leases percent USED TOTAL "$2" ;;
+    vnet_pfree_leases ) vnet_leases percent FREE TOTAL "$2" ;;
 esac
 
