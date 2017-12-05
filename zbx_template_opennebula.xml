@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-03T02:12:23Z</date>
+    <date>2017-12-05T18:09:00Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -192,14 +192,14 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.datastore.stat[free_mb]</key>
+                    <key>one.datastore.free_space</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
                     <status>0</status>
-                    <value_type>0</value_type>
+                    <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units/>
+                    <units>B</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -233,14 +233,14 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.datastore.stat[total_mb]</key>
+                    <key>one.datastore.total_space</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
                     <status>0</status>
-                    <value_type>0</value_type>
+                    <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units/>
+                    <units>B</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -274,12 +274,463 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.datastore.stat[used_mb]</key>
+                    <key>one.datastore.used_space</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
                     <status>0</status>
-                    <value_type>0</value_type>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Datastores</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.datastores</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Groups</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.groups</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts CPU Allocated</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.cpu_usage</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts CPU Free</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.free_cpu</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts RAM Free</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.free_mem</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts RAM Allocated</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.mem_usage</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts CPU Total</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.total_cpu</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts RAM Total</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.total_mem</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts CPU Used</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.used_cpu</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts RAM Used</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.host.used_mem</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: Hosts</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.hosts</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
                     <snmpv3_contextname/>
@@ -315,7 +766,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.states[disabled]</key>
+                    <key>one.hosts[disabled]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -356,7 +807,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.states[error]</key>
+                    <key>one.hosts[error]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -397,7 +848,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.states[monitored]</key>
+                    <key>one.hosts[monitored]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -438,7 +889,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.states[monitoring_init]</key>
+                    <key>one.hosts[monitoring_init]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -479,7 +930,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.states[offline]</key>
+                    <key>one.hosts[offline]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -516,11 +967,11 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>OpenNebula: Hosts Allocated CPU Total</name>
+                    <name>OpenNebula: Templates</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.stat[cpu_usage,total]</key>
+                    <key>one.tempaltes</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -557,93 +1008,11 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>OpenNebula: Hosts Free CPU Average</name>
+                    <name>OpenNebula: Users</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.stat[free_cpu,avg]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Free RAM Average</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[free_mem,avg]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Free RAM Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[free_mem,total]</key>
+                    <key>one.users</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -680,425 +1049,15 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>OpenNebula: Hosts Allocated RAM Total</name>
+                    <name>OpenNebula: VMs</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.host.stat[mem_usage,total]</key>
+                    <key>one.vms</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
                     <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Total CPU</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[total_cpu,total]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Total Ram</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[total_mem,total]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Used CPU Average</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[used_cpu,avg]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Used CPU Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[used_cpu,total]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Used RAM Average</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[used_mem,avg]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Used RAM Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.host.stat[used_mem,total]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Datastores Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.total[datastore]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: Hosts Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.total[host]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: VMs Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.total[vm]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>OpenNebula</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>OpenNebula: VNets Total</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>one.total[vnet]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
@@ -1135,7 +1094,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[active]</key>
+                    <key>one.vms[active]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1176,7 +1135,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[failed]</key>
+                    <key>one.vms[failed]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1217,7 +1176,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[pending]</key>
+                    <key>one.vms[pending]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1258,7 +1217,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[poweroff]</key>
+                    <key>one.vms[poweroff]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1299,7 +1258,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[suspended]</key>
+                    <key>one.vms[suspended]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1340,7 +1299,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[undeployed]</key>
+                    <key>one.vms[undeployed]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1381,7 +1340,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vm.states[unknown]</key>
+                    <key>one.vms[unknown]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1418,11 +1377,11 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>OpenNebula: VNet Leases Used</name>
+                    <name>OpenNebula: VNet Leases Free</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vnet.stat[used_leases]</key>
+                    <key>one.vnet.free_leases</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1463,7 +1422,89 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.vnet_ar.total</key>
+                    <key>one.vnet.total_leases</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: VNet Leases Used</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.vnet.used_leases</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OpenNebula</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OpenNebula: VNets</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>one.vnets</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -1509,7 +1550,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template OpenNebula:one.host.states[error].last()}&gt;0</expression>
+            <expression>{Template OpenNebula:one.hosts[error].last()}&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>OpenNebula: Found hosts in ERROR state on {HOSTNAME}</name>
@@ -1525,7 +1566,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template OpenNebula:one.vm.states[failed].last()}&gt;0</expression>
+            <expression>{Template OpenNebula:one.vms[failed].last()}&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>OpenNebula: Found VMs in FAILED state on {HOSTNAME}</name>
@@ -1541,7 +1582,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template OpenNebula:one.vm.states[unknown].last()}&gt;0</expression>
+            <expression>{Template OpenNebula:one.vms[unknown].last()}&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>OpenNebula: Found VMs in UNKNOWN state on {HOSTNAME}</name>
@@ -1623,7 +1664,7 @@
     </triggers>
     <graphs>
         <graph>
-            <name>OpenNebula: Common CPU Usage</name>
+            <name>OpenNebula: CPU Usage</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -1649,7 +1690,7 @@
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.stat[total_cpu,total]</key>
+                        <key>one.host.total_cpu</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1661,7 +1702,7 @@
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.stat[cpu_usage,total]</key>
+                        <key>one.host.cpu_usage</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1673,69 +1714,13 @@
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.stat[used_cpu,total]</key>
+                        <key>one.host.used_cpu</key>
                     </item>
                 </graph_item>
             </graph_items>
         </graph>
         <graph>
-            <name>OpenNebula: Common RAM Usage</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>007700</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template OpenNebula</host>
-                        <key>one.host.stat[total_mem,total]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>004400</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template OpenNebula</host>
-                        <key>one.host.stat[mem_usage,total]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>BB0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template OpenNebula</host>
-                        <key>one.host.stat[used_mem,total]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>OpenNebula: Datastore Space Usage</name>
+            <name>OpenNebula: Disk Usage</name>
             <width>900</width>
             <height>400</height>
             <yaxismin>0.0000</yaxismin>
@@ -1757,11 +1742,11 @@
                     <drawtype>1</drawtype>
                     <color>BB0000</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.datastore.stat[used_mb]</key>
+                        <key>one.datastore.used_space</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1769,11 +1754,11 @@
                     <drawtype>1</drawtype>
                     <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.datastore.stat[free_mb]</key>
+                        <key>one.datastore.free_space</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1801,11 +1786,11 @@
                     <drawtype>0</drawtype>
                     <color>0000CC</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.states[disabled]</key>
+                        <key>one.hosts[disabled]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1813,11 +1798,11 @@
                     <drawtype>0</drawtype>
                     <color>EE0000</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.states[error]</key>
+                        <key>one.hosts[error]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1825,11 +1810,11 @@
                     <drawtype>0</drawtype>
                     <color>888888</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.states[offline]</key>
+                        <key>one.hosts[offline]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1837,11 +1822,11 @@
                     <drawtype>0</drawtype>
                     <color>008800</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.states[monitored]</key>
+                        <key>one.hosts[monitored]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1849,11 +1834,99 @@
                     <drawtype>0</drawtype>
                     <color>888800</color>
                     <yaxisside>0</yaxisside>
+                    <calc_fnc>9</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template OpenNebula</host>
+                        <key>one.hosts[monitoring_init]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>OpenNebula: RAM Usage</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>0</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>1</drawtype>
+                    <color>007700</color>
+                    <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.host.states[monitoring_init]</key>
+                        <key>one.host.total_mem</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>1</drawtype>
+                    <color>004400</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template OpenNebula</host>
+                        <key>one.host.mem_usage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>1</drawtype>
+                    <color>BB0000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template OpenNebula</host>
+                        <key>one.host.used_mem</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>OpenNebula: Users</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>0</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>5</drawtype>
+                    <color>EE00EE</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template OpenNebula</host>
+                        <key>one.users</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1881,11 +1954,11 @@
                     <drawtype>1</drawtype>
                     <color>007700</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[active]</key>
+                        <key>one.vms[active]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1893,11 +1966,11 @@
                     <drawtype>1</drawtype>
                     <color>FF3333</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[failed]</key>
+                        <key>one.vms[failed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1905,11 +1978,11 @@
                     <drawtype>1</drawtype>
                     <color>888888</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[pending]</key>
+                        <key>one.vms[pending]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1917,11 +1990,11 @@
                     <drawtype>1</drawtype>
                     <color>000000</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[poweroff]</key>
+                        <key>one.vms[poweroff]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1929,11 +2002,11 @@
                     <drawtype>1</drawtype>
                     <color>0000AA</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[suspended]</key>
+                        <key>one.vms[suspended]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1941,11 +2014,11 @@
                     <drawtype>1</drawtype>
                     <color>AC8C14</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[undeployed]</key>
+                        <key>one.vms[undeployed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1953,11 +2026,11 @@
                     <drawtype>1</drawtype>
                     <color>880000</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vm.states[unknown]</key>
+                        <key>one.vms[unknown]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1965,14 +2038,14 @@
         <graph>
             <name>OpenNebula: VNet Leases</name>
             <width>900</width>
-            <height>200</height>
+            <height>400</height>
             <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
+            <yaxismax>0.0000</yaxismax>
             <show_work_period>0</show_work_period>
             <show_triggers>0</show_triggers>
-            <type>0</type>
+            <type>2</type>
             <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
+            <show_3d>1</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
             <ymin_type_1>0</ymin_type_1>
@@ -1983,13 +2056,13 @@
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>1</drawtype>
-                    <color>1A7C11</color>
+                    <color>CCCCFF</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vnet_ar.total</key>
+                        <key>one.vnet.free_leases</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1997,11 +2070,11 @@
                     <drawtype>1</drawtype>
                     <color>0000EE</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>9</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.vnet.stat[used_leases]</key>
+                        <key>one.vnet.used_leases</key>
                     </item>
                 </graph_item>
             </graph_items>
