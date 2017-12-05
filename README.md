@@ -6,6 +6,9 @@ Zabbix template for monitoring OpenNebula cloud.
 
 Template includes preconfigured parameters, graphics and triggers for complex monitoring OpenNebula cloud.
 
+<img src="images/hosts.png" width="250"> <img src="images/vms.png" width="250"> <img src="images/cpu.png" width="250"> 
+<img src="images/disk.png" width="250"> <img src="images/vnets.png" width="250"> <img src="images/ram.png" width="250">
+
 ## Development
 
 To contribute bug patches or new features, you can use the github Pull Request model. It is assumed that code and documentation are contributed under the Apache License 2.0. 
