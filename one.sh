@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ONEVM_FILE=/tmp/onevm.out
 ONEHOST_FILE=/tmp/onehost.out
 ONEDATASTORE_FILE=/tmp/onedatastore.out
@@ -20,17 +19,26 @@ difference(){
 }
 
 list_hosts_param() {
-    xmlstarlet sel -s -t -c "//HOST_POOL/HOST/ID/text()|//HOST_POOL/HOST/HOST_SHARE/$1" -n $ONEHOST_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
+    xmlstarlet sel -s -t -c "//HOST_POOL/HOST/ID/text()|//HOST_POOL/HOST/HOST_SHARE/$1" $ONEHOST_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
 }
 
 list_datastores_param() {
-    xmlstarlet sel -s -t -c "//DATASTORE_POOL/DATASTORE/ID/text()|//DATASTORE_POOL/DATASTORE/$1" -n $ONEDATASTORE_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
+    xmlstarlet sel -s -t -c "//DATASTORE_POOL/DATASTORE/ID/text()|//DATASTORE_POOL/DATASTORE/$1" $ONEDATASTORE_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
 }
 
+list_vnets_leases_used() {
+    xmlstarlet sel -s -t -c "//VNET_POOL/VNET[not(boolean(./PARENT_NETWORK_ID/text()[1]))]/ID/text()|//VNET_POOL/VNET[not(boolean(./PARENT_NETWORK_ID/text()[1]))]/USED_LEASES" $ONEVNET_FILE | \
+        sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
+}
 
+list_vnets_leases_total() {
+    xmlstarlet sel -s -t -c '//VNET_POOL/VNET[not(./PARENT_NETWORK_ID/text())]/ID|//VNET_POOL/VNET[not(./PARENT_NETWORK_ID/text())]/AR_POOL/AR/SIZE' -n $ONEVNET_FILE | \
+        sed -e 's/<\/SIZE>\(<ID>\)/\n\1/g' -e 's/\(<[^<]*>\)\{1,\}/\t/g' -e 's/\t\t//' | \
+        awk '{for (i=2; i<=NF; i++) sum+=$i }{print $ 1 " " sum }' | tr ' ' '\t'
+}
 
 host_mem() {
-    if [ "$#" == 2 ]; then
+    if [ -z "$3" ]; then
         list_hosts_param "$1" | scount "$2" | awk '{ printf( "%.0f\n", $1 * 1048576)}'
     else
         OPERATION="$1"
@@ -39,9 +47,8 @@ host_mem() {
         $OPERATION $PARAM1 $PARAM2
     fi
 }
-
 host_cpu() {
-    if [ "$#" == 2 ]; then
+    if [ -z "$3" ]; then
         list_hosts_param "$1" | scount "$2"
     else
         OPERATION="$1"
@@ -50,13 +57,28 @@ host_cpu() {
         $OPERATION $PARAM1 $PARAM2
     fi
 }
+
 datastore_space() {
-    if [ "$#" == 2 ]; then
+    if [ -z "$3" ]; then
         list_datastores_param "$1" | scount "$2" | awk '{ printf( "%.0f\n", $1 * 1048576)}'
     else
         OPERATION="$1"
         PARAM1="$(datastore_space "$2" "$4")"
         PARAM2="$(datastore_space "$3" "$4")"
+        $OPERATION $PARAM1 $PARAM2
+    fi
+}
+
+vnet_leases(){
+    if [ -z "$3" ]; then
+        case "$1" in
+            USED )  list_vnets_leases_used "$1" | scount "$2" ;;
+            TOTAL ) list_vnets_leases_total "$1" | scount "$2" ;;
+        esac
+    else
+        OPERATION="$1"
+        PARAM1="$(vnet_leases "$2" "$4")"
+        PARAM2="$(vnet_leases "$3" "$4")"
         $OPERATION $PARAM1 $PARAM2
     fi
 }
@@ -72,7 +94,6 @@ hosts_count() {
           awk '{init=0; monitoring_monitored=1; monitored=2; error=3; disabled=4; monitoring_error=5; monitoring_init=6; monitoring_disabled=7; offline=8}{ if( $ 2 == '$1' ){print $ 1} }' | wc -l
     fi
 }
-
 vms_count() {
     if [ -z "$1" ]; then
         xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEVM_FILE | wc -l
@@ -101,27 +122,30 @@ case "$1" in
     vms_count        ) vms_count        "$2" ;;
     datastores_count ) datastores_count "$2" ;;
     vnets_count      ) vnets_count      "$2" ;;
-
-    host_total_mem ) host_mem TOTAL_MEM "$2" ;;
-    host_free_mem  ) host_mem FREE_MEM  "$2" ;;
-    host_used_mem  ) host_mem USED_MEM  "$2" ;;
-    host_mem_usage ) host_mem MEM_USAGE "$2" ;;
-    host_total_cpu ) host_cpu TOTAL_CPU "$2" ;;
-    host_free_cpu  ) host_cpu FREE_CPU  "$2" ;;
-    host_used_cpu  ) host_cpu USED_CPU  "$2" ;;
-    host_cpu_usage ) host_cpu CPU_USAGE "$2" ;;
-    host_pfree_mem ) host_mem percent FREE_MEM TOTAL_MEM "$2" ;;
-    host_pused_mem ) host_mem percent USED_MEM TOTAL_MEM "$2" ;;
-    host_pfree_cpu ) host_cpu percent FREE_CPU TOTAL_CPU "$2" ;;
-    host_pused_cpu ) host_cpu percent USED_CPU TOTAL_CPU "$2" ;;
-    host_pcpu_usage ) host_cpu percent CPU_USAGE TOTAL_CPU "$2" ;;
-    host_pmem_usage ) host_cpu percent MEM_USAGE TOTAL_MEM "$2" ;;
-    host_pused_mem_usage ) host_cpu percent USED_CPU CPU_USAGE "$2" ;;
-    host_pused_cpu_usage ) host_cpu percent USED_MEM MEM_USAGE "$2" ;;
-    host_unused_mem ) host_mem difference MEM_USAGE USED_MEM "$2" ;;
-    host_unused_cpu ) host_cpu difference CPU_USAGE USED_CPU "$2" ;;
-
+    host_total_mem       ) host_mem TOTAL_MEM "$2" ;;
+    host_free_mem        ) host_mem FREE_MEM  "$2" ;;
+    host_used_mem        ) host_mem USED_MEM  "$2" ;;
+    host_mem_usage       ) host_mem MEM_USAGE "$2" ;;
+    host_total_cpu       ) host_cpu TOTAL_CPU "$2" ;;
+    host_free_cpu        ) host_cpu FREE_CPU  "$2" ;;
+    host_used_cpu        ) host_cpu USED_CPU  "$2" ;;
+    host_cpu_usage       ) host_cpu CPU_USAGE "$2" ;;
+    host_pfree_mem       ) host_mem percent FREE_MEM TOTAL_MEM    "$2" ;;
+    host_pused_mem       ) host_mem percent USED_MEM TOTAL_MEM    "$2" ;;
+    host_pfree_cpu       ) host_cpu percent FREE_CPU TOTAL_CPU    "$2" ;;
+    host_pused_cpu       ) host_cpu percent USED_CPU TOTAL_CPU    "$2" ;;
+    host_pcpu_usage      ) host_cpu percent CPU_USAGE TOTAL_CPU   "$2" ;;
+    host_pmem_usage      ) host_cpu percent MEM_USAGE TOTAL_MEM   "$2" ;;
+    host_pused_mem_usage ) host_cpu percent USED_CPU CPU_USAGE    "$2" ;;
+    host_pused_cpu_usage ) host_cpu percent USED_MEM MEM_USAGE    "$2" ;;
+    host_unused_mem      ) host_mem difference MEM_USAGE USED_MEM "$2" ;;
+    host_unused_cpu      ) host_cpu difference CPU_USAGE USED_CPU "$2" ;;
     datastore_total_space ) datastore_space TOTAL_MB "$2" ;;
     datastore_free_space  ) datastore_space FREE_MB  "$2" ;;
     datastore_used_space  ) datastore_space USED_MB  "$2" ;;
+    vnet_used_leases  ) vnet_leases USED  "$2" ;;
+    vnet_total_leases ) vnet_leases TOTAL "$2" ;;
+    vnet_pused_leases ) vnet_leases percent USED TOTAL    "$2" ;;
+    vnet_free_leases  ) vnet_leases difference TOTAL USED "$2" ;;
 esac
+
