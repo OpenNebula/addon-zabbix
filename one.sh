@@ -142,6 +142,8 @@ case "$1" in
     datastore_total_space ) datastore_space TOTAL_MB "$2" ;;
     datastore_free_space  ) datastore_space FREE_MB  "$2" ;;
     datastore_used_space  ) datastore_space USED_MB  "$2" ;;
+    datastore_pfree_space ) datastore_space percent FREE_MB TOTAL_MB "$2" ;;
+    datastore_pused_space ) datastore_space percent USED_MB TOTAL_MB "$2" ;;
     vnet_used_leases  ) vnet_leases USED  "$2" ;;
     vnet_free_leases  ) vnet_leases FREE  "$2" ;;
     vnet_total_leases ) vnet_leases TOTAL "$2" ;;
