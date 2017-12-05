@@ -83,10 +83,7 @@ vnet_leases(){
     fi
 }
 
-
-
-
-hosts_count() {
+hosts() {
     if [ -z "$1" ]; then
         xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEHOST_FILE | wc -l
     else
@@ -94,7 +91,8 @@ hosts_count() {
           awk '{init=0; monitoring_monitored=1; monitored=2; error=3; disabled=4; monitoring_error=5; monitoring_init=6; monitoring_disabled=7; offline=8}{ if( $ 2 == '$1' ){print $ 1} }' | wc -l
     fi
 }
-vms_count() {
+
+vms() {
     if [ -z "$1" ]; then
         xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEVM_FILE | wc -l
     else
@@ -109,19 +107,19 @@ vms_count() {
     fi
 }
 
-datastores_count() {
+datastores() {
     xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEDATASTORE_FILE | wc -l
 }
 
-vnets_count() {
+vnets() {
     xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEVNETS_FILE | wc -l
 }
 
 case "$1" in
-    hosts_count      ) hosts_count      "$2" ;;
-    vms_count        ) vms_count        "$2" ;;
-    datastores_count ) datastores_count "$2" ;;
-    vnets_count      ) vnets_count      "$2" ;;
+    hosts      ) hosts      "$2" ;;
+    vms        ) vms        "$2" ;;
+    datastores ) datastores "$2" ;;
+    vnets      ) vnets      "$2" ;;
     host_total_mem       ) host_mem TOTAL_MEM "$2" ;;
     host_free_mem        ) host_mem FREE_MEM  "$2" ;;
     host_used_mem        ) host_mem USED_MEM  "$2" ;;
