@@ -23,27 +23,46 @@ list_hosts_param() {
     xmlstarlet sel -s -t -c "//HOST_POOL/HOST/ID/text()|//HOST_POOL/HOST/HOST_SHARE/$1" -n $ONEHOST_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
 }
 
-hosts_mem() {
+list_datastores_param() {
+    xmlstarlet sel -s -t -c "//DATASTORE_POOL/DATASTORE/ID/text()|//DATASTORE_POOL/DATASTORE/$1" -n $ONEDATASTORE_FILE | sed -e 's/<[^/<]*>/\t/g' -e 's/<\/[^<]*>/\n/g'
+}
+
+
+
+host_mem() {
     if [ "$#" == 2 ]; then
         list_hosts_param "$1" | scount "$2" | awk '{ printf( "%.0f\n", $1 * 1048576)}'
     else
         OPERATION="$1"
-        PARAM1="$(hosts_mem "$2" "$4")"
-        PARAM2="$(hosts_mem "$3" "$4")"
+        PARAM1="$(host_mem "$2" "$4")"
+        PARAM2="$(host_mem "$3" "$4")"
         $OPERATION $PARAM1 $PARAM2
     fi
 }
 
-hosts_cpu() {
+host_cpu() {
     if [ "$#" == 2 ]; then
         list_hosts_param "$1" | scount "$2"
     else
         OPERATION="$1"
-        PARAM1="$(hosts_cpu "$2" "$4")"
-        PARAM2="$(hosts_cpu "$3" "$4")"
+        PARAM1="$(host_cpu "$2" "$4")"
+        PARAM2="$(host_cpu "$3" "$4")"
         $OPERATION $PARAM1 $PARAM2
     fi
 }
+datastore_space() {
+    if [ "$#" == 2 ]; then
+        list_datastores_param "$1" | scount "$2" | awk '{ printf( "%.0f\n", $1 * 1048576)}'
+    else
+        OPERATION="$1"
+        PARAM1="$(datastore_space "$2" "$4")"
+        PARAM2="$(datastore_space "$3" "$4")"
+        $OPERATION $PARAM1 $PARAM2
+    fi
+}
+
+
+
 
 hosts_count() {
     if [ -z "$1" ]; then
@@ -83,23 +102,26 @@ case "$1" in
     datastores_count ) datastores_count "$2" ;;
     vnets_count      ) vnets_count      "$2" ;;
 
-    hosts_total_mem ) hosts_mem TOTAL_MEM "$2" ;;
-    hosts_free_mem  ) hosts_mem FREE_MEM  "$2" ;;
-    hosts_used_mem  ) hosts_mem USED_MEM  "$2" ;;
-    hosts_mem_usage ) hosts_mem MEM_USAGE "$2" ;;
-    hosts_total_cpu ) hosts_cpu TOTAL_CPU "$2" ;;
-    hosts_free_cpu  ) hosts_cpu FREE_CPU  "$2" ;;
-    hosts_used_cpu  ) hosts_cpu USED_CPU  "$2" ;;
-    hosts_cpu_usage ) hosts_cpu CPU_USAGE "$2" ;;
-    hosts_pfree_mem ) hosts_mem percent FREE_MEM TOTAL_MEM "$2" ;;
-    hosts_pused_mem ) hosts_mem percent USED_MEM TOTAL_MEM "$2" ;;
-    hosts_pfree_cpu ) hosts_cpu percent FREE_CPU TOTAL_CPU "$2" ;;
-    hosts_pused_cpu ) hosts_cpu percent USED_CPU TOTAL_CPU "$2" ;;
-    hosts_pcpu_usage ) hosts_cpu percent CPU_USAGE TOTAL_CPU "$2" ;;
-    hosts_pmem_usage ) hosts_cpu percent MEM_USAGE TOTAL_MEM "$2" ;;
-    hosts_pused_mem_usage ) hosts_cpu percent USED_CPU CPU_USAGE "$2" ;;
-    hosts_pused_cpu_usage ) hosts_cpu percent USED_MEM MEM_USAGE "$2" ;;
-    hosts_unused_mem ) hosts_mem difference MEM_USAGE USED_MEM "$2" ;;
-    hosts_unused_cpu ) hosts_cpu difference CPU_USAGE USED_CPU "$2" ;;
-esac
+    host_total_mem ) host_mem TOTAL_MEM "$2" ;;
+    host_free_mem  ) host_mem FREE_MEM  "$2" ;;
+    host_used_mem  ) host_mem USED_MEM  "$2" ;;
+    host_mem_usage ) host_mem MEM_USAGE "$2" ;;
+    host_total_cpu ) host_cpu TOTAL_CPU "$2" ;;
+    host_free_cpu  ) host_cpu FREE_CPU  "$2" ;;
+    host_used_cpu  ) host_cpu USED_CPU  "$2" ;;
+    host_cpu_usage ) host_cpu CPU_USAGE "$2" ;;
+    host_pfree_mem ) host_mem percent FREE_MEM TOTAL_MEM "$2" ;;
+    host_pused_mem ) host_mem percent USED_MEM TOTAL_MEM "$2" ;;
+    host_pfree_cpu ) host_cpu percent FREE_CPU TOTAL_CPU "$2" ;;
+    host_pused_cpu ) host_cpu percent USED_CPU TOTAL_CPU "$2" ;;
+    host_pcpu_usage ) host_cpu percent CPU_USAGE TOTAL_CPU "$2" ;;
+    host_pmem_usage ) host_cpu percent MEM_USAGE TOTAL_MEM "$2" ;;
+    host_pused_mem_usage ) host_cpu percent USED_CPU CPU_USAGE "$2" ;;
+    host_pused_cpu_usage ) host_cpu percent USED_MEM MEM_USAGE "$2" ;;
+    host_unused_mem ) host_mem difference MEM_USAGE USED_MEM "$2" ;;
+    host_unused_cpu ) host_cpu difference CPU_USAGE USED_CPU "$2" ;;
 
+    datastore_total_space ) datastore_space TOTAL_MB "$2" ;;
+    datastore_free_space  ) datastore_space FREE_MB  "$2" ;;
+    datastore_used_space  ) datastore_space USED_MB  "$2" ;;
+esac
