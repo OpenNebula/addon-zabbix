@@ -119,6 +119,16 @@ After that you will have custom metrics and graphics.
 
 You can create custom items and triggers, open `one.sh` file, for check which parameters is supported.
 
+### Todo list
+
+These features is not yet implemented, but it would be nice to have it.
+You can help, and contribute to the project, if you want.
+
+[ ] Discovery Rules (Datastores, VNets, Hosts, VMs, Users and Groups)
+[ ] VM resources usage monitoring.
+[ ] User quotas usage monitoring.
+[ ] Group quotas usage monitoring.
+
 ## Optimizations
 
 Agent script already use caching when retrieves information from oned daemon.
