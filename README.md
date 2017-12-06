@@ -124,11 +124,11 @@ You can create custom items and triggers, open `one.sh` file, for check which pa
 These features is not yet implemented, but it would be nice to have it.
 You can help, and contribute to the project, if you want.
 
-[ ] Discovery Rules (Datastores, VNets, Hosts, VMs, Users and Groups)
-[ ] VM resources usage monitoring.
-[ ] User quotas usage monitoring.
-[ ] Group quotas usage monitoring.
-[ ] Separated clusters resources usage monitoring.
+* [ ] Discovery Rules (Datastores, VNets, Hosts, VMs, Users and Groups)
+* [ ] Single VM resources usage monitoring.
+* [ ] User quotas usage monitoring.
+* [ ] Group quotas usage monitoring.
+* [ ] Separated clusters resources usage monitoring.
 
 ## Optimizations
 
