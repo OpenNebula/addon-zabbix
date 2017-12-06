@@ -128,6 +128,7 @@ You can help, and contribute to the project, if you want.
 [ ] VM resources usage monitoring.
 [ ] User quotas usage monitoring.
 [ ] Group quotas usage monitoring.
+[ ] Separated clusters resources usage monitoring.
 
 ## Optimizations
 
