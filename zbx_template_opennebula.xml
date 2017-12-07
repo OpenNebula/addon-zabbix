@@ -1135,7 +1135,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.hosts[monitoring_init]</key>
+                    <key>one.hosts[monitoring_monitored]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -2230,7 +2230,7 @@
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
-                        <key>one.hosts[monitoring_init]</key>
+                        <key>one.hosts[monitoring_monitored]</key>
                     </item>
                 </graph_item>
             </graph_items>
