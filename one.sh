@@ -34,7 +34,7 @@ list_vnets_leases_used() {
 list_vnets_leases_total() {
     xmlstarlet sel -s -t -c '//VNET_POOL/VNET[not(./PARENT_NETWORK_ID/text())]/ID|//VNET_POOL/VNET[not(./PARENT_NETWORK_ID/text())]/AR_POOL/AR/SIZE' -n $ONEVNET_FILE | \
         sed -e 's/<\/SIZE>\(<ID>\)/\n\1/g' -e 's/\(<[^<]*>\)\{1,\}/\t/g' -e 's/\t\t//' | \
-        awk '{for (i=2; i<=NF; i++) sum+=$i }{print $ 1 " " sum }' | tr ' ' '\t'
+        awk '{for (i=2; i<=NF; i++) sum+=$i }{print $ 1 " " sum; sum=0 }' | tr ' ' '\t'
 }
 
 host_mem() {
