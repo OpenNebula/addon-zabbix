@@ -1878,7 +1878,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template OpenNebula:one.vnet.pfree_leases.last()}&lt;10</expression>
+            <expression>{Template OpenNebula:one.vnet.pfree_leases.last()}&lt;20</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Few number of free network leases in OpenNebula cluster on {HOST.NAME}</name>
@@ -1894,7 +1894,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template OpenNebula:one.host.pfree_cpu.last()}&lt;10</expression>
+            <expression>{Template OpenNebula:one.host.pfree_cpu.last()}&lt;20</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Few of available CPU resources in OpenNebula cluster on {HOST.NAME}</name>
@@ -1910,7 +1910,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template OpenNebula:one.datastore.pfree_space.last()}&lt;10</expression>
+            <expression>{Template OpenNebula:one.datastore.pfree_space.last()}&lt;20</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Few of available Disk space resources in OpenNebula cluster on {HOST.NAME}</name>
@@ -1926,7 +1926,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template OpenNebula:one.host.pfree_mem.last()}&lt;10</expression>
+            <expression>{Template OpenNebula:one.host.pfree_mem.last()}&lt;20</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Few of available RAM resources in OpenNebula cluster on {HOST.NAME}</name>
