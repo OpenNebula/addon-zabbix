@@ -8,8 +8,7 @@ Template includes preconfigured parameters, graphics and triggers for complex mo
 
 **Example graphics:**
 
-<img src="images/hosts.png" width="250"> <img src="images/vms.png" width="250"> <img src="images/cpu.png" width="250"> 
-<img src="images/disk.png" width="250"> <img src="images/vnets.png" width="250"> <img src="images/ram.png" width="250">
+<img src="images/graphs.png">
 
 **Example triggers:**
 
