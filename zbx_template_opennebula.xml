@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-05T20:23:45Z</date>
+    <date>2018-01-10T12:52:31Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2068,7 +2068,7 @@
             <show_3d>0</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
+            <ymin_type_1>1</ymin_type_1>
             <ymax_type_1>0</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
             <ymax_item_1>0</ymax_item_1>
@@ -2212,7 +2212,7 @@
                 <graph_item>
                     <sortorder>3</sortorder>
                     <drawtype>0</drawtype>
-                    <color>008800</color>
+                    <color>99FFFF</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>9</calc_fnc>
                     <type>0</type>
@@ -2241,14 +2241,14 @@
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
             <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
+            <show_work_period>0</show_work_period>
+            <show_triggers>0</show_triggers>
             <type>0</type>
             <show_legend>1</show_legend>
             <show_3d>0</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
+            <ymin_type_1>1</ymin_type_1>
             <ymax_type_1>0</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
             <ymax_item_1>0</ymax_item_1>
@@ -2258,7 +2258,7 @@
                     <drawtype>1</drawtype>
                     <color>007700</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
@@ -2270,7 +2270,7 @@
                     <drawtype>1</drawtype>
                     <color>004400</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
@@ -2282,7 +2282,7 @@
                     <drawtype>1</drawtype>
                     <color>BB0000</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template OpenNebula</host>
@@ -2297,22 +2297,22 @@
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
             <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
+            <show_work_period>0</show_work_period>
+            <show_triggers>0</show_triggers>
             <type>0</type>
             <show_legend>1</show_legend>
             <show_3d>0</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
+            <ymin_type_1>1</ymin_type_1>
             <ymax_type_1>0</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
             <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
                     <sortorder>0</sortorder>
-                    <drawtype>5</drawtype>
-                    <color>EE00EE</color>
+                    <drawtype>4</drawtype>
+                    <color>0000EE</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -2344,7 +2344,7 @@
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>1</drawtype>
-                    <color>007700</color>
+                    <color>66FF66</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>9</calc_fnc>
                     <type>0</type>
@@ -2448,7 +2448,7 @@
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>1</drawtype>
-                    <color>CCCCFF</color>
+                    <color>9999FF</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>9</calc_fnc>
                     <type>0</type>
@@ -2460,7 +2460,7 @@
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>1</drawtype>
-                    <color>0000EE</color>
+                    <color>880088</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>9</calc_fnc>
                     <type>0</type>
