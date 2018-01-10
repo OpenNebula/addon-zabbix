@@ -22,7 +22,7 @@ More info:
 * [How to Contribute](http://opennebula.org/addons/contribute/)
 * Support: [OpenNebula user forum](https://forum.opennebula.org/c/support)
 * Development: [OpenNebula developers forum](https://forum.opennebula.org/c/development)
-* Issues Tracking: [Github issues](https://github.com/kvaps/opennebula-addon-zabbix/issues)
+* Issues Tracking: [Github issues](https://github.com/OpenNebula/addon-zabbix/issues)
 
 ## Author
 
@@ -49,8 +49,8 @@ Discovery resources is not supported for now, but you can specify it manually.
 For install or update agent script on OpenNebula server execute:
 
 ```
-curl -o /etc/zabbix/zabbix_agentd.d/opennebula_zabbix.conf https://raw.githubusercontent.com/kvaps/opennebula-addon-zabbix/master/opennebula_zabbix.conf
-curl --create-dirs -o /usr/libexec/zabbix-extensions/scripts/one.sh https://raw.githubusercontent.com/kvaps/opennebula-addon-zabbix/master/one.sh
+curl -o /etc/zabbix/zabbix_agentd.d/opennebula_zabbix.conf https://raw.githubusercontent.com/opennebula/addon-zabbix/master/opennebula_zabbix.conf
+curl --create-dirs -o /usr/libexec/zabbix-extensions/scripts/one.sh https://raw.githubusercontent.com/opennebula/addon-zabbix/master/one.sh
 chmod +x /usr/libexec/zabbix-extensions/scripts/one.sh
 systemctl restart zabbix-agent
 ```
@@ -70,7 +70,7 @@ zabbix_get -s <your_server> -k one.collect[host]
 
 Download and improt zabbix template:
 
- * **[zbx_template_opennebula.xml](https://github.com/kvaps/opennebula-addon-zabbix/raw/master/zbx_template_opennebula.xml)**
+ * **[zbx_template_opennebula.xml](https://github.com/opennebula/addon-zabbix/raw/master/zbx_template_opennebula.xml)**
 
 ## Configuration
 ### Configuring Zabbix-Server
