@@ -113,7 +113,7 @@ datastores() {
 }
 
 vnets() {
-    xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEVNETS_FILE | wc -l
+    xmlstarlet sel -s -t -v "/*/*/ID" -n $ONEVNET_FILE | wc -l
 }
 
 case "$1" in

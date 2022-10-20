@@ -1217,7 +1217,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>one.tempaltes</key>
+                    <key>one.template</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
